@@ -35,13 +35,13 @@ module ShopkeepReports
     end
 
     def download_transactions(args = {})
-      start_date = args.fetch(:start_at, Time.now.beginning_of_day)
+      start_date = args.fetch(:start_date, Time.now.beginning_of_day)
       end_date = args.fetch(:end_date, Time.now)
       detailed = args.fetch(:detailed, false)
       tenders = args.fetch(:tenders, false)
       query = {
-        start_date: start_date.strftime("%B %d %Y %I:%M %p"),
-        end_date: end_date.strftime("%B %d %Y %I:%M %p"),
+        start_time: start_date.strftime("%B %d %Y %I:%M %p"),
+        end_time: end_date.strftime("%B %d %Y %I:%M %p"),
         detailed: detailed,
         tenders: tenders
       }
